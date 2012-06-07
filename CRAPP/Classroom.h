@@ -7,15 +7,16 @@
 //  Copyright 2012 OCDSB. All rights reserved.
 //
 //#import <Cocoa/Cocoa.h>
+//gordon ff
 #import <Foundation/Foundation.h>
 
 @interface Classroom :NSObject
 {
-	int classId;
+	NSString *classId;
 	NSString *className;
-	int sectionId;
+	NSString *sectionId;
 	NSString *sectionName;
-	int semester;
+	NSString *semester;
 	
 	NSMutableArray *studentIds; // int[]
 	NSMutableArray *expectationIds; // int[]
@@ -23,11 +24,11 @@
 	NSString *pathname;
 }
 
-@property int classId;
+@property NSString *classId;
 @property NSString *className;
-@property int sectionId;
+@property NSString *sectionId;
 @property NSString *sectionName;
-@property int semester;
+@property NSString *semester;
 @property NSMutableArray *studentIds;
 @property NSMutableArray *expectationIds;
 @property NSString *pathname;
