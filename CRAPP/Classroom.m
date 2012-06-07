@@ -47,7 +47,7 @@
 	{
 		pathname = path;
 		
-		NSArray *optionsData = [[NSArray alloc] initWithContentsOfFile:@"%@/class", path];
+		NSArray *optionsData = [[NSArray alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/class", path]];
 
 		classId = [optionsData objectAtIndex:0];
 		className = [optionsData objectAtIndex:1];
@@ -57,13 +57,13 @@
 		
 		for(int i = 5; i < [optionsData count]; i++)
 		{
-			NSString *temp = [userData i];
-			if(temp characterAtIndex:0=='s')
+			NSString *temp = [optionsData i];
+			if([temp characterAtIndex:0=='s'] )
 			{
 				[studentIds addObject:temp];
 			}
 			
-			else if(temp characterAtIndex:0=='e')
+			else if([temp characterAtIndex:0=='e'])
 			{
 				[expectationIds addObject:temp];
 			}
@@ -85,7 +85,7 @@
 		className = clssName;
 		sectionId = sectionIdentifier;
 		sectionName = sctionName;
-		semester = semesterIdentifier;
+		semester = semester;
 		
 		studentIds = studentIdentifiers;
 		expectationIds = expectationIdentifiers;
@@ -111,12 +111,12 @@
 		for(int i = 5; i < [data count]; i++)
 		{
 			NSString *temp = [data i];
-			if(temp characterAtIndex:0=='s')
+			if([temp characterAtIndex:0=='s'])
 			{
 				[studentIds addObject:temp];
 			}
 			
-			else if(temp characterAtIndex:0=='e')
+			else if([temp characterAtIndex:0=='e'])
 			{
 				[expectationIds addObject:temp];
 			}
@@ -159,12 +159,12 @@
 - (NSMutableArray*) getStudentNames
 {
 	NSMutableArray *studentNames = [[NSMutableArray alloc] init];
-	NSArray *studentData = [[NSArray alloc] init]
+	NSArray *studentData = [[NSArray alloc] init];
 	
 	for(int i = 0; i < [studentIds count]; i++)
 	{
-		studentData = [studentData initWithContentsOfFile:@"%@/%@/student", pathname, [studentIds objectAtIndex:i]];
-		[studentNames addObject:@"%@, %@", [studentData objectAtIndex:1], [studentData objectAtIndex:2]];
+		studentData = [studentData initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@/student", pathname, [studentIds objectAtIndex:i]]];
+		[studentNames addObject:[NSString stringWithFormat:@"%@, %@", [studentData objectAtIndex:1], [studentData objectAtIndex:2]]];
 		
 	}
 	[studentData dealloc];
@@ -180,17 +180,17 @@
 	[temp addObject:sectionName];
 	[temp addObject:semester];
 	
-	for(int i = 0; i < [studentIdentifiers count]; i++)
+	for(int i = 0; i < [studentIds count]; i++)
 	{
-		[temp addObject:[studentIds objectAtIndex:i]]
+		[temp addObject:[studentIds objectAtIndex:i]];
 	}
 	
-	for(int i = 0; i < [expectationIdentifiers count]; i++)
+	for(int i = 0; i < [expectationIds count]; i++)
 	{
-		[temp addObject:[expectationIds objectAtIndex:i]]
+		[temp addObject:[expectationIds objectAtIndex:i]];
 	}
 	
-	[temp writeToFile:@"%@/class", pathname atomically:YES];
+	[temp writeToFile:[[NSString stringWithFormat:[NSString stringWithFormat:@"%@/class",pathname]] atomically:YES]];
 	
 	[temp dealloc];
 }
