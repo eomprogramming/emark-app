@@ -12,6 +12,8 @@
 #import "ClassListViewController.h"
 #import "ViewController.h"
 #import "MenuData.h"
+#import "ServerConnection.h"
+#import "Classroom.h"
 @interface CourseSelectionViewController ()
 
 @end
@@ -64,8 +66,19 @@
 
 - (void)viewDidLoad
 {
+    
+    ServerConnection *connection = [[ServerConnection alloc]init];
+    [connection login:@"12345" withPwd:@""];
+    NSMutableArray *output = [connection selectClasses:connection.staffID];
+    [output removeObjectAtIndex:0];
+    NSLog(@"%i",[output count]);
+    NSMutableArray *courseList = [[NSMutableArray alloc]init];
+    for(int i =0; i<[[output objectAtIndex:0] count];i++){
+        [courseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+    }
+    
     [super viewDidLoad];
-    [courseOneButton setTitle:@"ICS2O.-01" forState:courseOneButton.state];
+    [courseOneButton setTitle:[[courseList objectAtIndex:0] getClassName] forState:courseOneButton.state];
     [courseTwoButton setTitle:@"ICS3U.-01" forState:courseTwoButton.state];
     [courseThreeButton setTitle:@"MPM2D.-04" forState:courseThreeButton.state];
     
