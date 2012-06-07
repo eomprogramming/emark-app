@@ -88,19 +88,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSMutableArray *a = [[[NSMutableArray alloc]init]autorelease];
-    [a addObject:@"Settings/Paramètres"];
-    [a addObject:@"Auto-Update/Mise à jour automatique"];
-    [a addObject:@"Auto/Auto"];
-    [a addObject:@"Manual/Manuel"];
-    [a addObject:@"Colour Blind Version/Version Daltonien"];
-    [a addObject:@"Colour Blind/Daltonien"];
-    [a addObject:@"Normal/Normale"];
-    [a addObject:@"Change password/Changer mot de passe"];
-    [a addObject:@"Update/Mettre à jour"];
-    [a addObject:@"Help/Aide"];
-    [a addObject:@"Logout/Déconnexion"];
 
     ServerConnection *connection = [[ServerConnection alloc]init];
     [connection login:@"12345" withPwd:@""];

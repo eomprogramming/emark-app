@@ -75,6 +75,8 @@
     [students addObject:@"Kelly, William"];
     [students addObject:@"Lecuyer, Adam"];
     [students retain];
+    [classListTable setDelegate:self];
+    [classListTable setDataSource:self];
     [classListTable reloadData];
     
     
@@ -103,21 +105,13 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [@"" autorelease];
-}
-
+#pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 10;
 }
 
+#pragma mark UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -128,20 +122,17 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = @"TEST";
-    NSLog(@"TEST");
+    cell.textLabel.text = [students objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor blackColor];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
     return cell;
 }
 
+#pragma mark UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    EventInfoViewController *eivc = [[EventInfoViewController alloc]init];
-//    [self presentModalViewController:eivc animated:NO];
-//    [eivc release];
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
