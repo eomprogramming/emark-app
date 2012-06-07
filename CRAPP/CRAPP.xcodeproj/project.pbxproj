@@ -21,7 +21,6 @@
 		13C85BE3157E8EE800CDB5D0 /* ServerConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BAB157E8C2500CDB5D0 /* ServerConnectionDelegate.m */; };
 		13C85BE4157E8EE800CDB5D0 /* Classroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85B9F157E8C2500CDB5D0 /* Classroom.m */; };
 		13C85BE5157E8EE800CDB5D0 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA1157E8C2500CDB5D0 /* Communication.m */; };
-		13C85BE6157E8EE800CDB5D0 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA3157E8C2500CDB5D0 /* Database.m */; };
 		13C85BE7157E8EE800CDB5D0 /* Expectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA5157E8C2500CDB5D0 /* Expectation.m */; };
 		13C85BE8157E8EE800CDB5D0 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA7157E8C2500CDB5D0 /* Options.m */; };
 		13C85BE9157E8EE800CDB5D0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BAD157E8C2500CDB5D0 /* Student.m */; };
@@ -50,12 +49,10 @@
 		13C85B8E157E8BA700CDB5D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		13C85B90157E8BA700CDB5D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		13C85B91157E8BA700CDB5D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		13C85B9E157E8C2500CDB5D0 /* Classroom.h */ = {isa = PBXFileReference; path = Classroom.h; sourceTree = "<group>"; };
+		13C85B9E157E8C2500CDB5D0 /* Classroom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Classroom.h; sourceTree = "<group>"; };
 		13C85B9F157E8C2500CDB5D0 /* Classroom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Classroom.m; sourceTree = "<group>"; };
 		13C85BA0157E8C2500CDB5D0 /* Communication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Communication.h; sourceTree = "<group>"; };
 		13C85BA1157E8C2500CDB5D0 /* Communication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
-		13C85BA2157E8C2500CDB5D0 /* Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
-		13C85BA3157E8C2500CDB5D0 /* Database.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		13C85BA4157E8C2500CDB5D0 /* Expectation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expectation.h; sourceTree = "<group>"; };
 		13C85BA5157E8C2500CDB5D0 /* Expectation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expectation.m; sourceTree = "<group>"; };
 		13C85BA6157E8C2500CDB5D0 /* Options.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
@@ -185,8 +182,6 @@
 				13C85B9F157E8C2500CDB5D0 /* Classroom.m */,
 				13C85BA0157E8C2500CDB5D0 /* Communication.h */,
 				13C85BA1157E8C2500CDB5D0 /* Communication.m */,
-				13C85BA2157E8C2500CDB5D0 /* Database.h */,
-				13C85BA3157E8C2500CDB5D0 /* Database.m */,
 				13C85BA4157E8C2500CDB5D0 /* Expectation.h */,
 				13C85BA5157E8C2500CDB5D0 /* Expectation.m */,
 				13C85BA6157E8C2500CDB5D0 /* Options.h */,
@@ -340,7 +335,6 @@
 				13C85BE3157E8EE800CDB5D0 /* ServerConnectionDelegate.m in Sources */,
 				13C85BE4157E8EE800CDB5D0 /* Classroom.m in Sources */,
 				13C85BE5157E8EE800CDB5D0 /* Communication.m in Sources */,
-				13C85BE6157E8EE800CDB5D0 /* Database.m in Sources */,
 				13C85BE7157E8EE800CDB5D0 /* Expectation.m in Sources */,
 				13C85BE8157E8EE800CDB5D0 /* Options.m in Sources */,
 				13C85BE9157E8EE800CDB5D0 /* Student.m in Sources */,
