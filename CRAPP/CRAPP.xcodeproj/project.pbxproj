@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13C85B7F157E8BA700CDB5D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C85B7E157E8BA700CDB5D0 /* UIKit.framework */; };
+		13C85B81157E8BA700CDB5D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C85B80157E8BA700CDB5D0 /* Foundation.framework */; };
+		13C85B83157E8BA700CDB5D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C85B82157E8BA700CDB5D0 /* CoreGraphics.framework */; };
+		13C85B89157E8BA700CDB5D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13C85B87157E8BA700CDB5D0 /* InfoPlist.strings */; };
+		13C85B8B157E8BA700CDB5D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85B8A157E8BA700CDB5D0 /* main.m */; };
+		13C85B8F157E8BA700CDB5D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85B8E157E8BA700CDB5D0 /* AppDelegate.m */; };
+		13C85B92157E8BA700CDB5D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85B91157E8BA700CDB5D0 /* ViewController.m */; };
+		13C85BD2157E8D0800CDB5D0 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C85BD1157E8D0800CDB5D0 /* ViewController.xib */; };
+		13C85BDA157E8E4500CDB5D0 /* MenuData.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BD9157E8E4500CDB5D0 /* MenuData.m */; };
+		13C85BDD157E8E6E00CDB5D0 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BDC157E8E6E00CDB5D0 /* Encryption.m */; };
+		13C85BE2157E8EE800CDB5D0 /* ServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA9157E8C2500CDB5D0 /* ServerConnection.m */; };
+		13C85BE3157E8EE800CDB5D0 /* ServerConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BAB157E8C2500CDB5D0 /* ServerConnectionDelegate.m */; };
+		13C85BE4157E8EE800CDB5D0 /* Classroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85B9F157E8C2500CDB5D0 /* Classroom.m */; };
+		13C85BE5157E8EE800CDB5D0 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA1157E8C2500CDB5D0 /* Communication.m */; };
+		13C85BE6157E8EE800CDB5D0 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA3157E8C2500CDB5D0 /* Database.m */; };
+		13C85BE7157E8EE800CDB5D0 /* Expectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA5157E8C2500CDB5D0 /* Expectation.m */; };
+		13C85BE8157E8EE800CDB5D0 /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BA7157E8C2500CDB5D0 /* Options.m */; };
+		13C85BE9157E8EE800CDB5D0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BAD157E8C2500CDB5D0 /* Student.m */; };
+		13C85BEA157E8EE800CDB5D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BAF157E8C2500CDB5D0 /* User.m */; };
+		13C85BEB157E8EE800CDB5D0 /* AccCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BB1157E8CBF00CDB5D0 /* AccCreationViewController.m */; };
+		13C85BEC157E8EE800CDB5D0 /* PwdRecovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BC9157E8CFB00CDB5D0 /* PwdRecovViewController.m */; };
+		13C85BED157E8EE800CDB5D0 /* CourseSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BBC157E8CBF00CDB5D0 /* CourseSelectionViewController.m */; };
+		13C85BEE157E8EE800CDB5D0 /* ClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BC6157E8CFB00CDB5D0 /* ClassListViewController.m */; };
+		13C85BEF157E8EE800CDB5D0 /* StudentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BCF157E8CFB00CDB5D0 /* StudentInfoViewController.m */; };
+		13C85BF0157E8EE800CDB5D0 /* COPviewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BB9157E8CBF00CDB5D0 /* COPviewerViewController.m */; };
+		13C85BF1157E8EE800CDB5D0 /* ExpSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BC0157E8CBF00CDB5D0 /* ExpSelectionViewController.m */; };
+		13C85BF2157E8EE800CDB5D0 /* COPsubmittingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BB6157E8CBF00CDB5D0 /* COPsubmittingViewController.m */; };
+		13C85BF3157E8EE800CDB5D0 /* SettingsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C85BCC157E8CFB00CDB5D0 /* SettingsPageViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13C85B7A157E8BA700CDB5D0 /* CRAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13C85B7E157E8BA700CDB5D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		13C85B80157E8BA700CDB5D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		13C85B82157E8BA700CDB5D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		13C85B86157E8BA700CDB5D0 /* CRAPP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRAPP-Info.plist"; sourceTree = "<group>"; };
+		13C85B88157E8BA700CDB5D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		13C85B8A157E8BA700CDB5D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13C85B8C157E8BA700CDB5D0 /* CRAPP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRAPP-Prefix.pch"; sourceTree = "<group>"; };
+		13C85B8D157E8BA700CDB5D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13C85B8E157E8BA700CDB5D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13C85B90157E8BA700CDB5D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		13C85B91157E8BA700CDB5D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		13C85B9E157E8C2500CDB5D0 /* Classroom.h */ = {isa = PBXFileReference; path = Classroom.h; sourceTree = "<group>"; };
+		13C85B9F157E8C2500CDB5D0 /* Classroom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Classroom.m; sourceTree = "<group>"; };
+		13C85BA0157E8C2500CDB5D0 /* Communication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Communication.h; sourceTree = "<group>"; };
+		13C85BA1157E8C2500CDB5D0 /* Communication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
+		13C85BA2157E8C2500CDB5D0 /* Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		13C85BA3157E8C2500CDB5D0 /* Database.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		13C85BA4157E8C2500CDB5D0 /* Expectation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Expectation.h; sourceTree = "<group>"; };
+		13C85BA5157E8C2500CDB5D0 /* Expectation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expectation.m; sourceTree = "<group>"; };
+		13C85BA6157E8C2500CDB5D0 /* Options.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
+		13C85BA7157E8C2500CDB5D0 /* Options.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
+		13C85BA8157E8C2500CDB5D0 /* ServerConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerConnection.h; sourceTree = "<group>"; };
+		13C85BA9157E8C2500CDB5D0 /* ServerConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerConnection.m; sourceTree = "<group>"; };
+		13C85BAA157E8C2500CDB5D0 /* ServerConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerConnectionDelegate.h; sourceTree = "<group>"; };
+		13C85BAB157E8C2500CDB5D0 /* ServerConnectionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerConnectionDelegate.m; sourceTree = "<group>"; };
+		13C85BAC157E8C2500CDB5D0 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		13C85BAD157E8C2500CDB5D0 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		13C85BAE157E8C2500CDB5D0 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		13C85BAF157E8C2500CDB5D0 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		13C85BB0157E8CBF00CDB5D0 /* AccCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccCreationViewController.h; sourceTree = "<group>"; };
+		13C85BB1157E8CBF00CDB5D0 /* AccCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccCreationViewController.m; sourceTree = "<group>"; };
+		13C85BB2157E8CBF00CDB5D0 /* AccCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccCreationViewController.xib; sourceTree = "<group>"; };
+		13C85BB3157E8CBF00CDB5D0 /* Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Banner.png; path = CRAPP/Banner.png; sourceTree = "<group>"; };
+		13C85BB4157E8CBF00CDB5D0 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button.png; path = CRAPP/Button.png; sourceTree = "<group>"; };
+		13C85BB5157E8CBF00CDB5D0 /* COPsubmittingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COPsubmittingViewController.h; sourceTree = "<group>"; };
+		13C85BB6157E8CBF00CDB5D0 /* COPsubmittingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COPsubmittingViewController.m; sourceTree = "<group>"; };
+		13C85BB7157E8CBF00CDB5D0 /* COPsubmittingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COPsubmittingViewController.xib; sourceTree = "<group>"; };
+		13C85BB8157E8CBF00CDB5D0 /* COPviewerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COPviewerViewController.h; sourceTree = "<group>"; };
+		13C85BB9157E8CBF00CDB5D0 /* COPviewerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COPviewerViewController.m; sourceTree = "<group>"; };
+		13C85BBA157E8CBF00CDB5D0 /* COPviewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COPviewerViewController.xib; sourceTree = "<group>"; };
+		13C85BBB157E8CBF00CDB5D0 /* CourseSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseSelectionViewController.h; sourceTree = "<group>"; };
+		13C85BBC157E8CBF00CDB5D0 /* CourseSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseSelectionViewController.m; sourceTree = "<group>"; };
+		13C85BBD157E8CBF00CDB5D0 /* CourseSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseSelectionViewController.xib; sourceTree = "<group>"; };
+		13C85BBE157E8CBF00CDB5D0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = CRAPP/Default.png; sourceTree = "<group>"; };
+		13C85BBF157E8CBF00CDB5D0 /* ExpSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpSelectionViewController.h; sourceTree = "<group>"; };
+		13C85BC0157E8CBF00CDB5D0 /* ExpSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpSelectionViewController.m; sourceTree = "<group>"; };
+		13C85BC1157E8CBF00CDB5D0 /* ExpSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpSelectionViewController.xib; sourceTree = "<group>"; };
+		13C85BC4157E8CBF00CDB5D0 /* OCDSB App Pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OCDSB App Pic.png"; path = "CRAPP/OCDSB App Pic.png"; sourceTree = "<group>"; };
+		13C85BC5157E8CFB00CDB5D0 /* ClassListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassListViewController.h; sourceTree = "<group>"; };
+		13C85BC6157E8CFB00CDB5D0 /* ClassListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassListViewController.m; sourceTree = "<group>"; };
+		13C85BC7157E8CFB00CDB5D0 /* ClassListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassListViewController.xib; sourceTree = "<group>"; };
+		13C85BC8157E8CFB00CDB5D0 /* PwdRecovViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PwdRecovViewController.h; sourceTree = "<group>"; };
+		13C85BC9157E8CFB00CDB5D0 /* PwdRecovViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PwdRecovViewController.m; sourceTree = "<group>"; };
+		13C85BCA157E8CFB00CDB5D0 /* PwdRecovViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PwdRecovViewController.xib; sourceTree = "<group>"; };
+		13C85BCB157E8CFB00CDB5D0 /* SettingsPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsPageViewController.h; sourceTree = "<group>"; };
+		13C85BCC157E8CFB00CDB5D0 /* SettingsPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsPageViewController.m; sourceTree = "<group>"; };
+		13C85BCD157E8CFB00CDB5D0 /* SettingsPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsPageViewController.xib; sourceTree = "<group>"; };
+		13C85BCE157E8CFB00CDB5D0 /* StudentInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentInfoViewController.h; sourceTree = "<group>"; };
+		13C85BCF157E8CFB00CDB5D0 /* StudentInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentInfoViewController.m; sourceTree = "<group>"; };
+		13C85BD0157E8CFB00CDB5D0 /* StudentInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentInfoViewController.xib; sourceTree = "<group>"; };
+		13C85BD1157E8D0800CDB5D0 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		13C85BD8157E8E4500CDB5D0 /* MenuData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuData.h; path = CRAPP/MenuData.h; sourceTree = "<group>"; };
+		13C85BD9157E8E4500CDB5D0 /* MenuData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuData.m; path = CRAPP/MenuData.m; sourceTree = "<group>"; };
+		13C85BDB157E8E6E00CDB5D0 /* Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encryption.h; sourceTree = "<group>"; };
+		13C85BDC157E8E6E00CDB5D0 /* Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encryption.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13C85B77157E8BA700CDB5D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C85B7F157E8BA700CDB5D0 /* UIKit.framework in Frameworks */,
+				13C85B81157E8BA700CDB5D0 /* Foundation.framework in Frameworks */,
+				13C85B83157E8BA700CDB5D0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13C85B6F157E8BA700CDB5D0 = {
+			isa = PBXGroup;
+			children = (
+				13C85BD3157E8D1300CDB5D0 /* Images */,
+				13C85B9D157E8BDB00CDB5D0 /* Server Connection */,
+				13C85B9B157E8BBA00CDB5D0 /* Objects */,
+				13C85B84157E8BA700CDB5D0 /* CRAPP GUI */,
+				13C85B7D157E8BA700CDB5D0 /* Frameworks */,
+				13C85B7B157E8BA700CDB5D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13C85B7B157E8BA700CDB5D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13C85B7A157E8BA700CDB5D0 /* CRAPP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13C85B7D157E8BA700CDB5D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13C85B7E157E8BA700CDB5D0 /* UIKit.framework */,
+				13C85B80157E8BA700CDB5D0 /* Foundation.framework */,
+				13C85B82157E8BA700CDB5D0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13C85B84157E8BA700CDB5D0 /* CRAPP GUI */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BD6157E8D8E00CDB5D0 /* Class Files */,
+				13C85BD5157E8D8700CDB5D0 /* Header Files */,
+				13C85BD4157E8D8000CDB5D0 /* XIB FIles */,
+				13C85B8D157E8BA700CDB5D0 /* AppDelegate.h */,
+				13C85B8E157E8BA700CDB5D0 /* AppDelegate.m */,
+				13C85B90157E8BA700CDB5D0 /* ViewController.h */,
+				13C85B91157E8BA700CDB5D0 /* ViewController.m */,
+				13C85BD1157E8D0800CDB5D0 /* ViewController.xib */,
+				13C85B85157E8BA700CDB5D0 /* Supporting Files */,
+			);
+			name = "CRAPP GUI";
+			path = CRAPP;
+			sourceTree = "<group>";
+		};
+		13C85B85157E8BA700CDB5D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13C85B86157E8BA700CDB5D0 /* CRAPP-Info.plist */,
+				13C85B87157E8BA700CDB5D0 /* InfoPlist.strings */,
+				13C85B8A157E8BA700CDB5D0 /* main.m */,
+				13C85B8C157E8BA700CDB5D0 /* CRAPP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13C85B9B157E8BBA00CDB5D0 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				13C85B9E157E8C2500CDB5D0 /* Classroom.h */,
+				13C85B9F157E8C2500CDB5D0 /* Classroom.m */,
+				13C85BA0157E8C2500CDB5D0 /* Communication.h */,
+				13C85BA1157E8C2500CDB5D0 /* Communication.m */,
+				13C85BA2157E8C2500CDB5D0 /* Database.h */,
+				13C85BA3157E8C2500CDB5D0 /* Database.m */,
+				13C85BA4157E8C2500CDB5D0 /* Expectation.h */,
+				13C85BA5157E8C2500CDB5D0 /* Expectation.m */,
+				13C85BA6157E8C2500CDB5D0 /* Options.h */,
+				13C85BA7157E8C2500CDB5D0 /* Options.m */,
+				13C85BAC157E8C2500CDB5D0 /* Student.h */,
+				13C85BAD157E8C2500CDB5D0 /* Student.m */,
+				13C85BAE157E8C2500CDB5D0 /* User.h */,
+				13C85BAF157E8C2500CDB5D0 /* User.m */,
+				13C85BD8157E8E4500CDB5D0 /* MenuData.h */,
+				13C85BD9157E8E4500CDB5D0 /* MenuData.m */,
+				13C85BDB157E8E6E00CDB5D0 /* Encryption.h */,
+				13C85BDC157E8E6E00CDB5D0 /* Encryption.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		13C85B9D157E8BDB00CDB5D0 /* Server Connection */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BA8157E8C2500CDB5D0 /* ServerConnection.h */,
+				13C85BA9157E8C2500CDB5D0 /* ServerConnection.m */,
+				13C85BAA157E8C2500CDB5D0 /* ServerConnectionDelegate.h */,
+				13C85BAB157E8C2500CDB5D0 /* ServerConnectionDelegate.m */,
+			);
+			name = "Server Connection";
+			sourceTree = "<group>";
+		};
+		13C85BD3157E8D1300CDB5D0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BB3157E8CBF00CDB5D0 /* Banner.png */,
+				13C85BB4157E8CBF00CDB5D0 /* Button.png */,
+				13C85BBE157E8CBF00CDB5D0 /* Default.png */,
+				13C85BC4157E8CBF00CDB5D0 /* OCDSB App Pic.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		13C85BD4157E8D8000CDB5D0 /* XIB FIles */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BB2157E8CBF00CDB5D0 /* AccCreationViewController.xib */,
+				13C85BCA157E8CFB00CDB5D0 /* PwdRecovViewController.xib */,
+				13C85BBD157E8CBF00CDB5D0 /* CourseSelectionViewController.xib */,
+				13C85BC7157E8CFB00CDB5D0 /* ClassListViewController.xib */,
+				13C85BD0157E8CFB00CDB5D0 /* StudentInfoViewController.xib */,
+				13C85BBA157E8CBF00CDB5D0 /* COPviewerViewController.xib */,
+				13C85BC1157E8CBF00CDB5D0 /* ExpSelectionViewController.xib */,
+				13C85BB7157E8CBF00CDB5D0 /* COPsubmittingViewController.xib */,
+				13C85BCD157E8CFB00CDB5D0 /* SettingsPageViewController.xib */,
+			);
+			name = "XIB FIles";
+			sourceTree = "<group>";
+		};
+		13C85BD5157E8D8700CDB5D0 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BB0157E8CBF00CDB5D0 /* AccCreationViewController.h */,
+				13C85BC8157E8CFB00CDB5D0 /* PwdRecovViewController.h */,
+				13C85BBB157E8CBF00CDB5D0 /* CourseSelectionViewController.h */,
+				13C85BC5157E8CFB00CDB5D0 /* ClassListViewController.h */,
+				13C85BCE157E8CFB00CDB5D0 /* StudentInfoViewController.h */,
+				13C85BB8157E8CBF00CDB5D0 /* COPviewerViewController.h */,
+				13C85BBF157E8CBF00CDB5D0 /* ExpSelectionViewController.h */,
+				13C85BB5157E8CBF00CDB5D0 /* COPsubmittingViewController.h */,
+				13C85BCB157E8CFB00CDB5D0 /* SettingsPageViewController.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		13C85BD6157E8D8E00CDB5D0 /* Class Files */ = {
+			isa = PBXGroup;
+			children = (
+				13C85BB1157E8CBF00CDB5D0 /* AccCreationViewController.m */,
+				13C85BC9157E8CFB00CDB5D0 /* PwdRecovViewController.m */,
+				13C85BBC157E8CBF00CDB5D0 /* CourseSelectionViewController.m */,
+				13C85BC6157E8CFB00CDB5D0 /* ClassListViewController.m */,
+				13C85BCF157E8CFB00CDB5D0 /* StudentInfoViewController.m */,
+				13C85BB9157E8CBF00CDB5D0 /* COPviewerViewController.m */,
+				13C85BC0157E8CBF00CDB5D0 /* ExpSelectionViewController.m */,
+				13C85BB6157E8CBF00CDB5D0 /* COPsubmittingViewController.m */,
+				13C85BCC157E8CFB00CDB5D0 /* SettingsPageViewController.m */,
+			);
+			name = "Class Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13C85B79157E8BA700CDB5D0 /* CRAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13C85B98157E8BA700CDB5D0 /* Build configuration list for PBXNativeTarget "CRAPP" */;
+			buildPhases = (
+				13C85B76157E8BA700CDB5D0 /* Sources */,
+				13C85B77157E8BA700CDB5D0 /* Frameworks */,
+				13C85B78157E8BA700CDB5D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CRAPP;
+			productName = CRAPP;
+			productReference = 13C85B7A157E8BA700CDB5D0 /* CRAPP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13C85B71157E8BA700CDB5D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = EOM;
+			};
+			buildConfigurationList = 13C85B74157E8BA700CDB5D0 /* Build configuration list for PBXProject "CRAPP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 13C85B6F157E8BA700CDB5D0;
+			productRefGroup = 13C85B7B157E8BA700CDB5D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13C85B79157E8BA700CDB5D0 /* CRAPP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13C85B78157E8BA700CDB5D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C85B89157E8BA700CDB5D0 /* InfoPlist.strings in Resources */,
+				13C85BD2157E8D0800CDB5D0 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13C85B76157E8BA700CDB5D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13C85BE2157E8EE800CDB5D0 /* ServerConnection.m in Sources */,
+				13C85BE3157E8EE800CDB5D0 /* ServerConnectionDelegate.m in Sources */,
+				13C85BE4157E8EE800CDB5D0 /* Classroom.m in Sources */,
+				13C85BE5157E8EE800CDB5D0 /* Communication.m in Sources */,
+				13C85BE6157E8EE800CDB5D0 /* Database.m in Sources */,
+				13C85BE7157E8EE800CDB5D0 /* Expectation.m in Sources */,
+				13C85BE8157E8EE800CDB5D0 /* Options.m in Sources */,
+				13C85BE9157E8EE800CDB5D0 /* Student.m in Sources */,
+				13C85BEA157E8EE800CDB5D0 /* User.m in Sources */,
+				13C85BEB157E8EE800CDB5D0 /* AccCreationViewController.m in Sources */,
+				13C85BEC157E8EE800CDB5D0 /* PwdRecovViewController.m in Sources */,
+				13C85BED157E8EE800CDB5D0 /* CourseSelectionViewController.m in Sources */,
+				13C85BEE157E8EE800CDB5D0 /* ClassListViewController.m in Sources */,
+				13C85BEF157E8EE800CDB5D0 /* StudentInfoViewController.m in Sources */,
+				13C85BF0157E8EE800CDB5D0 /* COPviewerViewController.m in Sources */,
+				13C85BF1157E8EE800CDB5D0 /* ExpSelectionViewController.m in Sources */,
+				13C85BF2157E8EE800CDB5D0 /* COPsubmittingViewController.m in Sources */,
+				13C85BF3157E8EE800CDB5D0 /* SettingsPageViewController.m in Sources */,
+				13C85B8B157E8BA700CDB5D0 /* main.m in Sources */,
+				13C85B8F157E8BA700CDB5D0 /* AppDelegate.m in Sources */,
+				13C85B92157E8BA700CDB5D0 /* ViewController.m in Sources */,
+				13C85BDA157E8E4500CDB5D0 /* MenuData.m in Sources */,
+				13C85BDD157E8E6E00CDB5D0 /* Encryption.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		13C85B87157E8BA700CDB5D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13C85B88157E8BA700CDB5D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13C85B96157E8BA700CDB5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		13C85B97157E8BA700CDB5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13C85B99157E8BA700CDB5D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRAPP/CRAPP-Prefix.pch";
+				INFOPLIST_FILE = "CRAPP/CRAPP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		13C85B9A157E8BA700CDB5D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRAPP/CRAPP-Prefix.pch";
+				INFOPLIST_FILE = "CRAPP/CRAPP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13C85B74157E8BA700CDB5D0 /* Build configuration list for PBXProject "CRAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C85B96157E8BA700CDB5D0 /* Debug */,
+				13C85B97157E8BA700CDB5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13C85B98157E8BA700CDB5D0 /* Build configuration list for PBXNativeTarget "CRAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13C85B99157E8BA700CDB5D0 /* Debug */,
+				13C85B9A157E8BA700CDB5D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13C85B71157E8BA700CDB5D0 /* Project object */;
+}
