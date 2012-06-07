@@ -104,15 +104,13 @@
 
     ServerConnection *connection = [[ServerConnection alloc]init];
     [connection login:@"12345" withPwd:@""];
-    NSMutableArray *classList = [[NSMutableArray alloc]init];
     NSMutableArray *output = [connection selectClasses:connection.staffID];
     [output removeObjectAtIndex:0];
     NSLog(@"%i",[output count]);
-    
-    
-    
-    Classroom *class1 = [[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:0] andPathname:@"/KINGSTON"];
-    NSLog(@"%@",output);
+    NSMutableArray *courseList = [[NSMutableArray alloc]init];
+    for(int i =0; i<[[output objectAtIndex:0] count];i++){
+        [courseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+    }
 }
 
 -(IBAction)pwdRecov{
