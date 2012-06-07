@@ -13,6 +13,7 @@
 #import "User.h"
 #import "PwdRecovViewController.h"
 #import "ServerConnection.h"
+#import "Classroom.h"
 @interface ViewController ()
 
 @end
@@ -106,9 +107,12 @@
     NSMutableArray *classList = [[NSMutableArray alloc]init];
     NSMutableArray *output = [connection selectClasses:connection.staffID];
     [output removeObjectAtIndex:0];
+    NSLog(@"%i",[output count]);
+    
+    
+    
+    Classroom *class1 = [[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:0] andPathname:@"/KINGSTON"];
     NSLog(@"%@",output);
-    
-    
 }
 
 -(IBAction)pwdRecov{
