@@ -99,8 +99,6 @@
     [a addObject:@"Update/Mettre à jour"];
     [a addObject:@"Help/Aide"];
     [a addObject:@"Logout/Déconnexion"];
-    [IO writeToFile:@"SettingsMenu" andData:a];
-    
 }
 
 -(IBAction)pwdRecov{
