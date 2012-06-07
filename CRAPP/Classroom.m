@@ -95,7 +95,7 @@
 	return self;
 }
 
-- (id) initWithArray:(NSString*)data andPathname:(NSString*)path
+- (id) initWithArray:(NSMutableArray*)data andPathname:(NSString*)path
 {
 	self = [super init];
 	if(self)

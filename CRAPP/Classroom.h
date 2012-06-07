@@ -46,7 +46,7 @@
   andExpectations:(NSMutableArray*)expectationIdentifiers andPathname:(NSString*)path;
 
 // Initializes an instance of Class with an array
-- (id) initWithArray:(NSString*)data andPathname:(NSString*)path;
+- (id) initWithArray:(NSMutableArray*)data andPathname:(NSString*)path;
 
 // Accessor: returns the class identifier
 - (int) getId;
