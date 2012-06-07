@@ -111,12 +111,12 @@
 		for(int i = 5; i < [data count]; i++)
 		{
 			NSString *temp = [data i];
-			if([temp characterAtIndex:0=='s'])
+			if([temp characterAtIndex:0]=='s')
 			{
 				[studentIds addObject:temp];
 			}
 			
-			else if([temp characterAtIndex:0=='e'])
+			else if([temp characterAtIndex:0]=='e')
 			{
 				[expectationIds addObject:temp];
 			}

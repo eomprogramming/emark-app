@@ -12,6 +12,7 @@
 #import "AccCreationViewController.h"
 #import "User.h"
 #import "PwdRecovViewController.h"
+#import "ServerConnection.h"
 @interface ViewController ()
 
 @end
@@ -99,6 +100,15 @@
     [a addObject:@"Update/Mettre à jour"];
     [a addObject:@"Help/Aide"];
     [a addObject:@"Logout/Déconnexion"];
+
+    ServerConnection *connection = [[ServerConnection alloc]init];
+    [connection login:@"12345" withPwd:@""];
+    NSMutableArray *classList = [[NSMutableArray alloc]init];
+    NSMutableArray *output = [connection selectClasses:connection.staffID];
+    [output removeObjectAtIndex:0];
+    NSLog(@"%@",output);
+    
+    
 }
 
 -(IBAction)pwdRecov{
