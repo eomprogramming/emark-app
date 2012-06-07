@@ -62,7 +62,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[NSMutableArray alloc]init];
+    students = [[NSMutableArray alloc]init];
     [students addObject:@"Amini, Siros"];
     [students addObject:@"Bortnowski, Andrea"];
     [students addObject:@"Clark, Trish"];
