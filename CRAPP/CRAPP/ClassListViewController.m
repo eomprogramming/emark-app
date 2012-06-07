@@ -62,9 +62,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [table setScrollEnabled:YES];
-    table.frame = CGRectMake(0,44,320,372);
-    table.bounds = CGRectMake(0,0,320,372);
     NSMutableArray *teachers = [[[NSMutableArray alloc]init]autorelease];
     [teachers addObject:@"Amini, Siros"];
     [teachers addObject:@"Bortnowski, Andrea"];
@@ -78,30 +75,7 @@
     [teachers addObject:@"Kelly, William"];
     [teachers addObject:@"Lecuyer, Adam"];
     
-    viewInsideTable.bounds = CGRectMake(0,0,320,[teachers count]*40);
-    [table setContentSize:CGSizeMake(320,[teachers count]*40)];
-    table.showsVerticalScrollIndicator = YES;
-        for(int i=0; i<[teachers count]; i++){
-            UIButton *student = [[UIButton buttonWithType:UIButtonTypeCustom]retain];
-            student.frame = CGRectMake(0,i*40,315,40);
-            student.bounds = CGRectMake(0,0,315,40);
-            [student setTitleColor:[UIColor yellowColor] forState:student.state];
-            if(i%2==0){
-                student.backgroundColor = [[UIColor alloc]initWithRed:81/255.0 green:0 blue:77/255.0 alpha:1];
-
-            }
-            else {
-                student.backgroundColor = [[UIColor alloc]initWithRed:198/255.0 green:144/255.0 blue:195/255.0 alpha:1];
-                
-            }
-            [student setTitle:[teachers objectAtIndex:i] forState:student.state];
-            student.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            [student addTarget:self action:@selector(goToStudentInfo:) forControlEvents:UIControlEventTouchDown];
-         
-         [table addSubview:student];
-//         [student release];
-
-        }
+    
     
     if(1+1==2){
         NSMutableArray *menuObjects = [[NSMutableArray alloc]init];
@@ -127,6 +101,50 @@
 //    self.navigationItem.title = [@"Class List for " stringByAppendingFormat:courseCode];
     // Do any additional setup after loading the view from its nib.
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [@"" autorelease];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""] autorelease];
+    }
+    
+    // Configure the cell...
+    
+    cell.textLabel.text = @"EVENT NAME";
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    EventInfoViewController *eivc = [[EventInfoViewController alloc]init];
+//    [self presentModalViewController:eivc animated:NO];
+//    [eivc release];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 
 - (void)viewDidUnload
 {

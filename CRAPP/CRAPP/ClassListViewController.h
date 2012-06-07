@@ -22,6 +22,5 @@
 -(IBAction) goToSettings; 
 -(IBAction)logout;
 -(IBAction)goBack;
--(void)goToStudentInfo:(UIButton*)sender;
 -(void)setCourseCode:(NSString*)courseCode;
 @end
