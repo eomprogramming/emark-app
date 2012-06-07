@@ -33,7 +33,7 @@
 @property NSMutableArray *expectationIds;
 @property NSString *pathname;
 
-// Initializes an instance of Class with Null
+// Initializes   an instance of Class with Null
 - (id) init;
 	
 // Initializes an instance of Class with a file

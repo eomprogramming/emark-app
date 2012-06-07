@@ -74,7 +74,7 @@
         [menuObjects addObject:settingsButton];
         [menuObjects addObject:logoutButton];
         
-        NSMutableArray *textOnMenu = [IO readFile:PROP_FILE_STR];
+        NSMutableArray *textOnMenu = [MenuData readFile:PROP_FILE_STR];
         
         for(int i=0; i<[menuObjects count]; i++){
             for (int j=0; j<[textOnMenu count]; j++) {
