@@ -62,19 +62,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSMutableArray *teachers = [[[NSMutableArray alloc]init]autorelease];
-    [teachers addObject:@"Amini, Siros"];
-    [teachers addObject:@"Bortnowski, Andrea"];
-    [teachers addObject:@"Clark, Trish"];
-    [teachers addObject:@"Damjanschitz, Zsuzsanna"];
-    [teachers addObject:@"Farmer, CJ"];
-    [teachers addObject:@"Gemmell, Robert"];
-    [teachers addObject:@"Hill, Kelly"];
-    [teachers addObject:@"Inman, Gyro"];
-    [teachers addObject:@"Jamieson, Linda"];
-    [teachers addObject:@"Kelly, William"];
-    [teachers addObject:@"Lecuyer, Adam"];
-    
+    [[NSMutableArray alloc]init];
+    [students addObject:@"Amini, Siros"];
+    [students addObject:@"Bortnowski, Andrea"];
+    [students addObject:@"Clark, Trish"];
+    [students addObject:@"Damjanschitz, Zsuzsanna"];
+    [students addObject:@"Farmer, CJ"];
+    [students addObject:@"Gemmell, Robert"];
+    [students addObject:@"Hill, Kelly"];
+    [students addObject:@"Inman, Gyro"];
+    [students addObject:@"Jamieson, Linda"];
+    [students addObject:@"Kelly, William"];
+    [students addObject:@"Lecuyer, Adam"];
+    [students retain];
+    [classListTable reloadData];
     
     
     if(1+1==2){
@@ -114,7 +115,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,8 +128,8 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = @"EVENT NAME";
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.text = @"TEST";
+    NSLog(@"TEST");
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
