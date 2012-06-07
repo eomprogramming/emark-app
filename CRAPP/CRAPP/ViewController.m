@@ -106,7 +106,6 @@
     [connection login:@"12345" withPwd:@""];
     NSMutableArray *output = [connection selectClasses:connection.staffID];
     [output removeObjectAtIndex:0];
-    NSLog(@"%i",[output count]);
     NSMutableArray *courseList = [[NSMutableArray alloc]init];
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
         [courseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
