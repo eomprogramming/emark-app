@@ -49,19 +49,19 @@
 - (id) initWithArray:(NSMutableArray*)data andPathname:(NSString*)path;
 
 // Accessor: returns the class identifier
-- (int) getId;
+- (NSString*) getId;
 
 // Accessor: returns the class name as an NSString
 - (NSString*) getClassName;
 
 // Accessor: returns the section identifier
-- (int) getSectionId;
+- (NSString*) getSectionId;
 
 // Accessor: returns the section name as an NSString
 - (NSString*) getSectionNameId;
 
 // Accessor: returns the semester (0 = 1st, 1 = 2nd)
-- (int) getSemester;
+- (NSString*) getSemester;
 
 // Accessor: returns a list of the students
 - (NSMutableArray*) getStudentIdentifiersList; // Student[]
