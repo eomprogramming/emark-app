@@ -18,8 +18,8 @@
 	NSString *sectionName;
 	NSString *semester;
 	
-	NSMutableArray *studentIds; // int[]
-	NSMutableArray *expectationIds; // int[]
+	NSMutableArray *studentIds; // NSString[]
+	NSMutableArray *expectationIds; // NSString[]
 	
 	NSString *pathname;
 }
@@ -40,9 +40,9 @@
 - (id) initWithPathname:(NSString*)path;
 
 // Initializes an instance of Class with parameters 
-- (id) initWithId:(int)classIdentifier andClassName:(NSString*)clssName 
-	 andSectionId:(int)sectionIdentifier andSectionName:(NSString*)sctionName
-	  andSemester:(int)semesterIdentifer andStudents:(NSMutableArray*)studentIdentifiers 
+- (id) initWithId:(NSString*)classIdentifier andClassName:(NSString*)clssName 
+	 andSectionId:(NSString*)sectionIdentifier andSectionName:(NSString*)sctionName
+	  andSemester:(NSString*)semesterIdentifer andStudents:(NSMutableArray*)studentIdentifiers 
   andExpectations:(NSMutableArray*)expectationIdentifiers andPathname:(NSString*)path;
 
 // Initializes an instance of Class with an array
