@@ -62,7 +62,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    students = [[NSMutableArray alloc]init];
+    NSMutableArray *students = [[[NSMutableArray alloc]init]autorelease];
     [students addObject:@"Amini, Siros"];
     [students addObject:@"Bortnowski, Andrea"];
     [students addObject:@"Clark, Trish"];
@@ -74,10 +74,6 @@
     [students addObject:@"Jamieson, Linda"];
     [students addObject:@"Kelly, William"];
     [students addObject:@"Lecuyer, Adam"];
-    [students retain];
-    [classListTable setDelegate:self];
-    [classListTable setDataSource:self];
-    [classListTable reloadData];
     
     
     if(1+1==2){
@@ -100,42 +96,36 @@
         [menuObjects release];
         [textOnMenu removeAllObjects];
     }
+    
+    classListTableView.bounds = CGRectMake(0,0,320,[students count]*40);
+    [classListScrollView setContentSize:CGSizeMake(320,[students count]*40)];
+    classListScrollView.showsVerticalScrollIndicator = YES;
+    for(int i=0; i<[students count]; i++){
+        UIButton *student = [[UIButton buttonWithType:UIButtonTypeCustom]retain];
+        student.frame = CGRectMake(0,i*40,315,40);
+        student.bounds = CGRectMake(0,0,315,40);
+        [student setTitleColor:[UIColor yellowColor] forState:student.state];
+        if(i%2==0){
+            student.backgroundColor = [[UIColor alloc]initWithRed:81/255.0 green:0 blue:77/255.0 alpha:1];
+            
+        }
+        else {
+            student.backgroundColor = [[UIColor alloc]initWithRed:198/255.0 green:144/255.0 blue:195/255.0 alpha:1];
+            
+        }
+        [student setTitle:[students objectAtIndex:i] forState:student.state];
+        student.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [student addTarget:self action:@selector(goToStudentInfo:) forControlEvents:UIControlEventTouchDown];
+        
+        [classListScrollView addSubview:student];
+        //         [student release];
+        
+    }
+    
 //    titleLabel.title = course;
 //    self.navigationItem.title = [@"Class List for " stringByAppendingFormat:courseCode];
     // Do any additional setup after loading the view from its nib.
 }
-
-#pragma mark UITableViewDelegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-#pragma mark UITableViewDataSource
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""] autorelease];
-    }
-    
-    // Configure the cell...
-    
-    cell.textLabel.text = [students objectAtIndex:indexPath.row];
-    cell.textLabel.textColor = [UIColor blackColor];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    
-    return cell;
-}
-
-#pragma mark UITableViewDataSource
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 
 
 - (void)viewDidUnload
