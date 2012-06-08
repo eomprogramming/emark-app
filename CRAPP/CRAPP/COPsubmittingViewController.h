@@ -12,7 +12,6 @@
     
     IBOutlet UIBarButtonItem *nameCourse;
     IBOutlet UIButton *backButton;
-    IBOutlet UILabel *expecLabel;
     IBOutlet UILabel *commentLabel;
     IBOutlet UITextView *commScroll;
     IBOutlet UIButton *save;

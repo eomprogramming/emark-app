@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ExpSelectionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>{
-    IBOutlet UITableView *expectationTable;
     IBOutlet UIBarButtonItem *titleLabel;
     NSMutableArray *expectations;
 }

@@ -16,7 +16,6 @@
     IBOutlet UIBarButtonItem *settingsButton;
     IBOutlet UIBarButtonItem *logoutButton;
     NSMutableArray *students;
-    IBOutlet UITableView *classListTable;
 //    const NSString *PROP_FILE;
 }
 -(IBAction) goToSettings; 
