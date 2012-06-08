@@ -42,7 +42,7 @@
  andConversations:(NSMutableArray*)conversationsIdentifiers andPathname:(NSString*)path;
 
 // Initalizes an instance of Student with an array
-- (id) initWithArray:(NSArray*)data andPathname:(NSString*)path;
+- (id) initWithArray:(NSMutableArray*)data andPathname:(NSString*)path;
 
 // Mutator: adds an object to observations
 - (void) addObservationIdentifier:(NSString*)comId;

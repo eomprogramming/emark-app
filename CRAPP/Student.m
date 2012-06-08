@@ -99,7 +99,7 @@
 	return self;
 }
 
-- (id) initWithArray:(NSArray*)data andPathname:(NSString*)path
+- (id) initWithArray:(NSMutableArray*)data andPathname:(NSString*)path
 {
 	self = [super init];
 	if(self)
@@ -116,7 +116,7 @@
 		
 		for(int i = 3; i<[data count]; i++)
 		{
-			NSString *temp = [data i];
+			NSString *temp = [data objectAtIndex:i];
 			if([temp characterAtIndex:0=='o'])
 			{
 				[observationIds addObject:temp];

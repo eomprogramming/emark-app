@@ -14,6 +14,10 @@
 #import "PwdRecovViewController.h"
 #import "ServerConnection.h"
 #import "Classroom.h"
+#import "Student.h"
+#import "Communication.h"
+#import "Expectation.h"
+
 @interface ViewController ()
 
 @end
@@ -115,8 +119,23 @@
         
     }
     //array of students 
-    output = [connection selectStudentsByCourses:@"1"];
-    NSMutableArray  *studentList
+    output = [connection selectStudentsByCourses:[[s1courseList objectAtIndex:0]getId]];
+    [output removeObjectAtIndex:0];
+    NSMutableArray  *studentList = [[NSMutableArray alloc]init];
+    for(int i =0; i<[[output objectAtIndex:0] count];i++){
+        [studentList addObject:[[Student alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+    }
+    
+    //array of communications for a student
+    output = [connection selectAllCommunications:[[studentList objectAtIndex:0]getId]];
+    [output removeObjectAtIndex:0];
+    
+    NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
+    for(int i =0; i<[[output objectAtIndex:0] count];i++){
+        [communicationsList addObject:[[Communication alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+    }
+   
+    //array of course expectations
 }
 
 -(IBAction)pwdRecov{
