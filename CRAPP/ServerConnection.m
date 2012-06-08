@@ -143,12 +143,15 @@ NSError *error;
     NSString *urlString = [[NSString stringWithFormat:@"http://%@/mark/model/student-model.php?", IPAddress]stringByAppendingString:inputString];    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     
-     NSString *output =  [self connectToServer:request withData:inputString];
+    NSString *output =  [self connectToServer:request withData:inputString];
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
+    
     NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    
     //does not work
     if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
     else{
-    }    
+    }  
     return jsonArray;
 }
 -(NSMutableArray*) selectObservationsAndOrConvos: (NSString*) studentId type:(NSString*)type lrnSkill:(NSMutableArray*)skill {
@@ -184,6 +187,7 @@ NSError *error;
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     
     NSString *output = [self connectToServer:request withData:inputString];
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
     NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
     //does not work
     if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
@@ -192,7 +196,7 @@ NSError *error;
     return jsonArray;
 }
 
--(NSString*) addObservation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) addObservation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
                 explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*) inputText{
     
     ServerConnectionDelegate *sDelegate = [ServerConnectionDelegate alloc];
@@ -214,14 +218,15 @@ NSError *error;
     
     NSString *output = [self connectToServer:request withData:inputString];
     
-    //implement a check to output
-    if(output)NSLog(@"");
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
+    NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    //does not work
+    if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
     else{
     }    
-    return output;
-}
+    return jsonArray;}
 
--(NSString*) addConversation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) addConversation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
                  explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*) inputText{
     
     ServerConnectionDelegate *sDelegate = [ServerConnectionDelegate alloc];
@@ -243,14 +248,16 @@ NSError *error;
     
     NSString *output = [self connectToServer:request withData:inputString];
     
-    //implement a check to output
-    if(output)NSLog(@"");
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
+    NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    //does not work
+    if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
     else{
     }    
-    return output;
+    return jsonArray;
 }
 
--(NSString*) deleteRecord:(NSString*)recordId{
+-(NSMutableArray*) deleteRecord:(NSString*)recordId{
     ServerConnectionDelegate *sDelegate = [ServerConnectionDelegate alloc];
     [sDelegate setObj:self];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -265,14 +272,16 @@ NSError *error;
     
     NSString *output = [self connectToServer:request withData:inputString];
     
-    //implement a check to output
-    if(output)NSLog(@"");
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
+    NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    //does not work
+    if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
     else{
     }    
-    return output;
+    return jsonArray;
 }
 
--(NSString*) updateRecord:(NSString*)recordId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) updateRecord:(NSString*)recordId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
               explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*) inputText{
     
     ServerConnectionDelegate *sDelegate = [ServerConnectionDelegate alloc];
@@ -294,11 +303,13 @@ NSError *error;
     
     NSString *output = [self connectToServer:request withData:inputString];
     
-    //implement a check to output
-    if(output)NSLog(@"");
+    output = [output substringWithRange:NSMakeRange(1, output.length - 3)];
+    NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    //does not work
+    if([[jsonArray objectAtIndex:0] boolValue]==YES)NSLog(@"sucess");
     else{
     }    
-    return output;
+    return jsonArray;
 
 }
 

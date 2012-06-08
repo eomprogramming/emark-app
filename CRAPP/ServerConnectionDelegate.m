@@ -21,6 +21,7 @@
 
 - (void) connection: (NSURLConnection*)connection{
     NSLog(@"did receive response");
+    [obj setData:nil];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response 

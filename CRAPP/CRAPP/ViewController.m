@@ -93,10 +93,30 @@
     [connection login:@"12345" withPwd:@""];
     NSMutableArray *output = [connection selectClasses:connection.staffID];
     [output removeObjectAtIndex:0];
-    NSMutableArray *courseList = [[NSMutableArray alloc]init];
+    NSLog(@"%@",output);
+    //array of Courses semester sorted, the master array has all them
+    NSMutableArray *masterCourseList = [[NSMutableArray alloc]init];
+    NSMutableArray *s1courseList = [[NSMutableArray alloc]init];
+    NSMutableArray *s2courseList = [[NSMutableArray alloc]init];
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
-        [courseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+        [masterCourseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+        
+        if([[[masterCourseList objectAtIndex:i]getSemester] isEqual:@"1"])
+        {
+            [s1courseList addObject:[masterCourseList objectAtIndex:i]];
+            NSLog(@"added s1 for cycle %i", i);
+        }
+        
+        if([[[masterCourseList objectAtIndex:i]getSemester] isEqual:@"2"])
+        {
+            [s2courseList addObject:[masterCourseList objectAtIndex:i]];
+            NSLog(@"added s2 for cycle %i", i);
+        }
+        
     }
+    //array of students 
+    output = [connection selectStudentsByCourses:@"1"];
+    NSMutableArray  *studentList
 }
 
 -(IBAction)pwdRecov{

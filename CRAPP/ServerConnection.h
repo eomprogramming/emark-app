@@ -115,12 +115,12 @@
  * @params NSString timeStamp - the unix timestamp of the date the observation was sent
  * @params NSString isLearning - 0 for false, 1 for true
  * @params NSString explrnSkill - the id of the expectation or learning skill
- * @params NSString level - the level of the communication can be 0,1,2,3, or 4
+ * @params NSString level - the level of the communication, can be 0,1,2,3, or 4
  * @params NSString inputText - the comment of the communication. Refer to bit.ly/markingApi for the 
  * format
  * @returns - NSMutableArray of the server response 
  */
--(NSString*) addObservation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) addObservation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
                 explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*) inputText;
 
 /*
@@ -134,14 +134,14 @@
  * format
  * @returns - NSString of the server response 
  */
--(NSString*) addConversation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) addConversation:(NSString*)studentId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
                  explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*)inputText;
 
 /*
  * Delete a selected record
  * @returns - NSString of the server response
 */ 
- -(NSString*) deleteRecord:(NSString*)recordId;
+ -(NSMutableArray*) deleteRecord:(NSString*)recordId;
  
  /*
  * Update a record
@@ -154,7 +154,7 @@
  * format
  * @returns - NSMutableArray of the server response 
  */
--(NSString*) updateRecord:(NSString*)recordId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
+-(NSMutableArray*) updateRecord:(NSString*)recordId time:(NSString*)timeStamp isLearning:(NSString*)isLrn 
               explrnSkill:(NSString*)explrnSkill level:(NSString*)level text:(NSString*) inputText;
 
 @end
