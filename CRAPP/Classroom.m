@@ -126,15 +126,15 @@
 	
 }
 
-- (int) getId {return classId;}
+- (NSString*) getId {return classId;}
 
 - (NSString*) getClassName {return className;}
 
-- (int) getSectionId {return sectionId;}
+- (NSString*) getSectionId {return sectionId;}
 
 - (NSString*) getSectionName {return sectionName;}
 
-- (int) getSemester {return semester;}
+- (NSString*) getSemester {return semester;}
 
 - (NSMutableArray*) getStudentIdentifiersList {return studentIds;}
 
