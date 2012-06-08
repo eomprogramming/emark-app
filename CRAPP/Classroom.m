@@ -57,7 +57,7 @@
 		
 		for(int i = 5; i < [optionsData count]; i++)
 		{
-			NSString *temp = [optionsData i];
+			NSString *temp = [optionsData objectAtIndex:i];
 			if([temp characterAtIndex:0=='s'] )
 			{
 				[studentIds addObject:temp];
@@ -110,7 +110,7 @@
 		
 		for(int i = 5; i < [data count]; i++)
 		{
-			NSString *temp = [data i];
+			NSString *temp = [data objectAtIndex:i];
 			if([temp characterAtIndex:0]=='s')
 			{
 				[studentIds addObject:temp];
