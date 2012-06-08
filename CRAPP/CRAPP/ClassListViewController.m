@@ -28,7 +28,7 @@
 }
 
 -(IBAction)logout{
-    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     [self presentModalViewController:main animated:YES];
     [main release];
 }
@@ -105,14 +105,12 @@
         student.frame = CGRectMake(0,i*40,315,40);
         student.bounds = CGRectMake(0,0,315,40);
         [student setTitleColor:[UIColor yellowColor] forState:student.state];
-        if(i%2==0){
+        
+        if(i%2==0)
             student.backgroundColor = [[UIColor alloc]initWithRed:81/255.0 green:0 blue:77/255.0 alpha:1];
-            
-        }
-        else {
+        else
             student.backgroundColor = [[UIColor alloc]initWithRed:198/255.0 green:144/255.0 blue:195/255.0 alpha:1];
-            
-        }
+        
         [student setTitle:[students objectAtIndex:i] forState:student.state];
         student.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [student addTarget:self action:@selector(goToStudentInfo:) forControlEvents:UIControlEventTouchDown];

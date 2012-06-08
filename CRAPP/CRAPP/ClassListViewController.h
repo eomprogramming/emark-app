@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+@interface ClassListViewController : UIViewController{
 //    IBOutlet UIButton *settingsButton;
     IBOutlet UIBarButtonItem *backButton;
     IBOutlet UIBarButtonItem *titleLabel;

@@ -29,7 +29,7 @@
 }
 
 -(IBAction)logout{
-    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     [self presentModalViewController:main animated:YES];
     [main release];
 }
@@ -79,7 +79,7 @@
     
     [super viewDidLoad];
     [courseOneButton setTitle:[[courseList objectAtIndex:0] getClassName] forState:courseOneButton.state];
-    [courseTwoButton setTitle:@"ICS3U.-01" forState:courseTwoButton.state];
+    [courseTwoButton setTitle:[[courseList objectAtIndex:1] getClassName] forState:courseTwoButton.state];
     [courseThreeButton setTitle:@"MPM2D.-04" forState:courseThreeButton.state];
     
     if(1+1==2){

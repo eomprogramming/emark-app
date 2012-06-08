@@ -44,7 +44,7 @@
 }
 
 -(IBAction)logout{
-    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+    ViewController *main = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     [self presentModalViewController:main animated:YES];
     [main release];
 }
