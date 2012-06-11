@@ -103,7 +103,9 @@
     NSMutableArray *s1courseList = [[NSMutableArray alloc]init];
     NSMutableArray *s2courseList = [[NSMutableArray alloc]init];
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
-        [masterCourseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docDirectory = [paths objectAtIndex:0]; 
+        [masterCourseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i]] andPathname:[NSString stringWithFormat:@"%@/eMarking/", docDirectory]];
         
         if([[[masterCourseList objectAtIndex:i]getSemester] isEqual:@"1"])
         {
@@ -126,16 +128,32 @@
         [studentList addObject:[[Student alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
     }
     
+    //[connection addConversation:@"1" time:@"1" isLearning:@"1" explrnSkill:@"1" level:@"1" text:@"hi"];
+    
     //array of communications for a student
     output = [connection selectAllCommunications:[[studentList objectAtIndex:0]getId]];
     [output removeObjectAtIndex:0];
     
     NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
-        [communicationsList addObject:[[Communication alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+        [communicationsList addObject:[[Communication alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"KINGSTON"]];
     }
    
     //array of course expectations
+    output = [connection selectExpectationsByCourses:[[s1courseList objectAtIndex:0]getId]];
+    [output removeObjectAtIndex:0];
+    output = [output objectAtIndex:0];
+    NSMutableArray *names = [[NSMutableArray alloc]init];
+    NSMutableArray *Ids = [[NSMutableArray alloc]init];
+    
+    for(int i = 0; i<[output count];i++){
+        [names addObject:[[output objectAtIndex:i]objectAtIndex:0]];
+        [names addObject:[[output objectAtIndex:i]objectAtIndex:1]];
+    }
+    
+    [Expectation writeClassExpectations:@"KINGSTON" andIdentifiers:Ids andNames:names];
+    
+    NSLog(@"gordon will see this");
 }
 
 -(IBAction)pwdRecov{

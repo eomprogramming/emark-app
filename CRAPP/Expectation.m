@@ -14,27 +14,27 @@
 
 + (void) writeClassExpectations:(NSString*)pathname andIdentifiers:(NSMutableArray*)identifiers andNames:(NSMutableArray*)names	
 {
-	NSException *invalidData = [NSException exceptionWithName:@"InvalidData" reason:"InvalidIdentifiers - WHATHAVEYOUDONE" userInfo:nil];
+	NSException *invalidData = [NSException exceptionWithName:@"InvalidData" reason:@"InvalidIdentifiers - WHATHAVEYOUDONE" userInfo:nil];
 	
 	if(![identifiers count]==[names count])
 		@throw invalidData;
-	
 	else
 	{
-		NSMutableArray *temp = [[NSMutableArray alloc] init];
+			NSLog(@"%i", [identifiers count]);
+        NSMutableArray *temp = [[NSMutableArray alloc] init];
 		
-		[temp addObject:[identifiers count]];
+		[temp addObject:[NSString stringWithFormat:@"%i",[identifiers count]]];
 		
 		for(int i = 0; i<[identifiers count]; i++)
 		{
-			[temp addObject:[identifiers objectAtIndex:i]];
+			[temp addObject:[[NSMutableArray alloc]init]];
+            [[temp objectAtIndex:i+1]addObject:[identifiers objectAtIndex:i]];
+            [[temp objectAtIndex:i+1]addObject:[names objectAtIndex:i]];
+            NSLog(@"%@", temp);
 		}
-		
-		for(int i = 0; i<[names count]; i++)
-		{
-			[temp addObject:[names objectAtIndex:i]];
-		}
-        [temp writeToFile:[NSString stringWithFormat:@"%@/expectations",pathname] atomically:YES];
+        NSLog(@"567765756hffhghgf");
+//        [temp writeToFile:[NSString stringWithFormat:@"%@/expectations",pathname] atomically:YES];
+        NSLog(@"23423");
     }
 }
 
@@ -54,7 +54,7 @@
 			return temp;
 		}
 	}
-	NSException *invalidParameters = [NSException exceptionWithName:@"InvalidParameters" reason:"InvalidParameters - WHATHAVEYOUDONE" userInfo:nil];
+	NSException *invalidParameters = [NSException exceptionWithName:@"InvalidParameters" reason:@"InvalidParameters - WHATHAVEYOUDONE" userInfo:nil];
 	@throw invalidParameters;
 }
 
