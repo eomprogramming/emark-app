@@ -142,10 +142,17 @@
     //array of communications for a student
     output = [connection selectAllCommunications:[[studentList objectAtIndex:0]getId]];
     [output removeObjectAtIndex:0];
-    
-    NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
-    for(int i =0; i<[[output objectAtIndex:0] count];i++){
-        [communicationsList addObject:[[Communication alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"KINGSTON"]];
+
+    for(int j = 0; j < [output count]; j++){
+         {
+              NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
+              for(int i =0; i<[[output objectAtIndex:j] count];i++){
+                    Communication com = [[Communication alloc]initWithArray:[[output  objectAtIndex:j] objectAtIndex:i] andPathname:@"KINGSTON"];
+                    [communicationsList addObject:com];
+                    [com saveData];
+               }
+               
+         }
     }
     
     
