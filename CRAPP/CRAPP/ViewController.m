@@ -132,10 +132,10 @@
     //array of students 
     output = [connection selectStudentsByCourses:[[s1courseList objectAtIndex:0]getId]];
     [output removeObjectAtIndex:0];
-    NSMutableArray  *studentList = [[NSMutableArray alloc]init];
-    for(int i =0; i<[[output objectAtIndex:0] count];i++){
-        [studentList addObject:[[Student alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
-    }
+//    NSMutableArray  *studentList = [[NSMutableArray alloc]init];
+//    for(int i =0; i<[[output objectAtIndex:0] count];i++){
+//        [studentList addObject:[[Student alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"/KINGSTON"]];
+//    }
     
     //[connection addConversation:@"1" time:@"1" isLearning:@"1" explrnSkill:@"1" level:@"1" text:@"hi"];
     
@@ -184,12 +184,24 @@
         output = [connection selectStudentsByCourses:[[masterCourseList objectAtIndex:i] getId]];
         [output removeObjectAtIndex:0];
         output = [output objectAtIndex:0];
+        NSMutableArray *studentList = [[NSMutableArray alloc]init];
+       
+        //make array of students
+        for(int k =0; i<[[output objectAtIndex:0] count];i++){
+            Student *s = [output objectAtIndex:k]
+            Classroom *c = [masterCourseList objectAtIndex:k];
+            [studentList addObject:[[Student alloc]initWithArray:[output objectAtIndex:i] andPathname:@"/%@/%@/%@",eMarkPATH,[c getId],[];
+        }
+        
+        
+        
+        
         for(int i =0;i<[output count];i++){
-            [[[NSFileManager defaultManager]createDirectoryAtPath:[NSString stringWithFormat@"/%@/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId],[[output objectAtIndex:i] getId]]];
-    
+            
+            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId],[[output objectAtIndex:i] getId]];
+            [[NSFileManager defaultManager]createDirectoryAtPath:s withIntermediateDirectories:YES attributes:nil error:nil];
         }
     }
-    
     
     
     
