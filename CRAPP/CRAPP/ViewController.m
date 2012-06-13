@@ -151,10 +151,6 @@
          }
     }
     
-    
-    
-    
-
     //make courses directory
     for(int i=0; i<[masterCourseList count];i++){
         Classroom *c = [masterCourseList objectAtIndex:i];
@@ -169,15 +165,16 @@
     }
     //array of course expectations and saving them
     for(int i =0;i<[masterCourseList count];i++){
-    output = [connection selectExpectationsByCourses:[[masterCourseList objectAtIndex:i]getId]];
-    [output removeObjectAtIndex:0];
-    output = [output objectAtIndex:0];
-    NSMutableArray *names = [[NSMutableArray alloc]init];
-    NSMutableArray *Ids = [[NSMutableArray alloc]init];
+        
+        output = [connection selectExpectationsByCourses:[[masterCourseList objectAtIndex:i]getId]];
+        [output removeObjectAtIndex:0];
+        output = [output objectAtIndex:0];
+        NSMutableArray *names = [[NSMutableArray alloc]init];
+        NSMutableArray *Ids = [[NSMutableArray alloc]init];
     
         for(int i = 0; i<[output count];i++){
-        [names addObject:[[output objectAtIndex:i]objectAtIndex:0]];
-        [names addObject:[[output objectAtIndex:i]objectAtIndex:1]];
+            [names addObject:[[output objectAtIndex:i]objectAtIndex:0]];
+            [names addObject:[[output objectAtIndex:i]objectAtIndex:1]];
         }
     
         [Expectation writeClassExpectations:[NSString stringWithFormat:@"/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId]] andIdentifiers:Ids andNames:names];
@@ -188,38 +185,20 @@
         output = [connection selectStudentsByCourses:[masterCourseList objectAtIndex:i]];
         [output removeObjectAtIndex:0];
         output = [output objectAtIndex:0];
-            
+        Classroom *c = [output objectAtIndex:i];
         NSMutableArray *studentList = [[NSMutableArray alloc]init];
+        
+        for(int j = 0; j<[output count]; j++){
+            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[[output objectAtIndex:j] ];
+            
+        }
+        
         for(int j = 0; j<[output count]; j++){
             NSMutableArray *a = [output objectAtIndex:j];
-            [studentList addObject:[[Student alloc]initWithArray: andPathname:<#(NSString *)#>
+            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[a objectAtIndex:0]];
+            [studentList addObject:[[Student alloc]initWithArray:a andPathname:s]];
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 -(IBAction)pwdRecov{
