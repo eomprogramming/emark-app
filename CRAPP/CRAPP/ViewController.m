@@ -140,18 +140,14 @@
     //[connection addConversation:@"1" time:@"1" isLearning:@"1" explrnSkill:@"1" level:@"1" text:@"hi"];
     
     //array of communications for a student
-    output = [connection selectAllCommunications:[[studentList objectAtIndex:0]getId]];
-    [output removeObjectAtIndex:0];
-
     for(int j = 0; j < [output count]; j++){
          {
               NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
               for(int i =0; i<[[output objectAtIndex:j] count];i++){
-                    Communication com = [[Communication alloc]initWithArray:[[output  objectAtIndex:j] objectAtIndex:i] andPathname:@"KINGSTON"];
+                    Communication *com = [[Communication alloc]initWithArray:[[output  objectAtIndex:j] objectAtIndex:i] andPathname:@"KINGSTON"];
                     [communicationsList addObject:com];
                     [com saveData];
                }
-               
          }
     }
     
@@ -188,25 +184,15 @@
     }
     //creating student directories
     for(int i = 0;i<[masterCourseList count];i++){
-        output = [connection selectStudentsByCourses:[[masterCourseList objectAtIndex:i] getId]];
+        
+        output = [connection selectStudentsByCourses:[masterCourseList objectAtIndex:i]];
         [output removeObjectAtIndex:0];
         output = [output objectAtIndex:0];
-        NSMutableArray *studentList = [[NSMutableArray alloc]init];
-       
-        //make array of students
-        for(int k =0; i<[[output objectAtIndex:0] count];i++){
-            Student *s = [output objectAtIndex:k]
-            Classroom *c = [masterCourseList objectAtIndex:k];
-            [studentList addObject:[[Student alloc]initWithArray:[output objectAtIndex:i] andPathname:@"/%@/%@/%@",eMarkPATH,[c getId],[];
-        }
-        
-        
-        
-        
-        for(int i =0;i<[output count];i++){
             
-            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId],[[output objectAtIndex:i] getId]];
-            [[NSFileManager defaultManager]createDirectoryAtPath:s withIntermediateDirectories:YES attributes:nil error:nil];
+        NSMutableArray *studentList = [[NSMutableArray alloc]init];
+        for(int j = 0; j<[output count]; j++){
+            NSMutableArray *a = [output objectAtIndex:j];
+            [studentList addObject:[[Student alloc]initWithArray: andPathname:<#(NSString *)#>
         }
     }
     
