@@ -190,7 +190,7 @@
 		[temp addObject:[expectationIds objectAtIndex:i]];
 	}
 	
-	[temp writeToFile:[[NSString stringWithFormat:[NSString stringWithFormat:@"%@/class",pathname]] atomically:YES]];
+	[temp writeToFile:[NSString stringWithFormat:[NSString stringWithFormat:@"%@/class",pathname]] atomically:YES];
 	
 	[temp dealloc];
 }

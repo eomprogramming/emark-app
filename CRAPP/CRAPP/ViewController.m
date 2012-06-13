@@ -97,15 +97,24 @@
     [connection login:@"12345" withPwd:@""];
     NSMutableArray *output = [connection selectClasses:connection.staffID];
     [output removeObjectAtIndex:0];
-    NSLog(@"%@",output);
+    
+    // Generate the path to the new directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *eMarkPATH = [NSString stringWithFormat:@"%@/eMarking/C12345", [paths objectAtIndex:0]];    
+    
     //array of Courses semester sorted, the master array has all them
     NSMutableArray *masterCourseList = [[NSMutableArray alloc]init];
     NSMutableArray *s1courseList = [[NSMutableArray alloc]init];
     NSMutableArray *s2courseList = [[NSMutableArray alloc]init];
+    
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *docDirectory = [paths objectAtIndex:0]; 
-        [masterCourseList addObject:[[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i]] andPathname:[NSString stringWithFormat:@"%@/eMarking/", docDirectory]];
+        NSLog(@"%@", docDirectory);
+        Classroom *c = [[Classroom alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:[NSString stringWithFormat:@"%@/Library/eMarking/",docDirectory]];
+        
+        [masterCourseList addObject:c];
+                                    
         
         if([[[masterCourseList objectAtIndex:i]getSemester] isEqual:@"1"])
         {
@@ -138,22 +147,74 @@
     for(int i =0; i<[[output objectAtIndex:0] count];i++){
         [communicationsList addObject:[[Communication alloc]initWithArray:[[output objectAtIndex:0]objectAtIndex:i] andPathname:@"KINGSTON"]];
     }
-   
-    //array of course expectations
-    output = [connection selectExpectationsByCourses:[[s1courseList objectAtIndex:0]getId]];
+    
+    
+    
+    
+
+    //make courses directory
+    for(int i=0; i<[masterCourseList count];i++){
+        Classroom *c = [masterCourseList objectAtIndex:i];
+        NSString *newFolder = [NSString stringWithFormat:@"/%@/%@",eMarkPATH,[c getId]];
+        [c setPathname:newFolder];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:newFolder]) {
+            // Directory does not exist so create it
+            [[NSFileManager defaultManager] createDirectoryAtPath:newFolder withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+        [c saveData];
+    }
+    //array of course expectations and saving them
+    for(int i =0;i<[masterCourseList count];i++){
+    output = [connection selectExpectationsByCourses:[[masterCourseList objectAtIndex:i]getId]];
     [output removeObjectAtIndex:0];
     output = [output objectAtIndex:0];
     NSMutableArray *names = [[NSMutableArray alloc]init];
     NSMutableArray *Ids = [[NSMutableArray alloc]init];
     
-    for(int i = 0; i<[output count];i++){
+        for(int i = 0; i<[output count];i++){
         [names addObject:[[output objectAtIndex:i]objectAtIndex:0]];
         [names addObject:[[output objectAtIndex:i]objectAtIndex:1]];
+        }
+    
+        [Expectation writeClassExpectations:[NSString stringWithFormat:@"/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId]] andIdentifiers:Ids andNames:names];
+    }
+    //creating student directories
+    for(int i = 0;i<[masterCourseList count];i++){
+        output = [connection selectStudentsByCourses:[[masterCourseList objectAtIndex:i] getId]];
+        [output removeObjectAtIndex:0];
+        output = [output objectAtIndex:0];
+        for(int i =0;i<[output count];i++){
+            [[[NSFileManager defaultManager]createDirectoryAtPath:[NSString stringWithFormat@"/%@/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId],[[output objectAtIndex:i] getId]]];
+    
+        }
     }
     
-    [Expectation writeClassExpectations:@"KINGSTON" andIdentifiers:Ids andNames:names];
     
-    NSLog(@"gordon will see this");
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 -(IBAction)pwdRecov{

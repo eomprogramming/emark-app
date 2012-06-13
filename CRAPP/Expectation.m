@@ -33,7 +33,7 @@
             NSLog(@"%@", temp);
 		}
         NSLog(@"567765756hffhghgf");
-//        [temp writeToFile:[NSString stringWithFormat:@"%@/expectations",pathname] atomically:YES];
+    [temp writeToFile:[NSString stringWithFormat:@"%@/expectations",pathname] atomically:YES];
         NSLog(@"23423");
     }
 }
