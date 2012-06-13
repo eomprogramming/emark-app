@@ -185,19 +185,20 @@
         output = [connection selectStudentsByCourses:[masterCourseList objectAtIndex:i]];
         [output removeObjectAtIndex:0];
         output = [output objectAtIndex:0];
+        NSLog(@"%i",[output count]);
         Classroom *c = [output objectAtIndex:i];
         NSMutableArray *studentList = [[NSMutableArray alloc]init];
         
         for(int j = 0; j<[output count]; j++){
-            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[[output objectAtIndex:j] ];
-            
+            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[[output objectAtIndex:j]objectAtIndex:0]];
+            [[NSFileManager defaultManager] createDirectoryAtPath:s withIntermediateDirectories:YES attributes:nil error:nil];
         }
-        
-        for(int j = 0; j<[output count]; j++){
-            NSMutableArray *a = [output objectAtIndex:j];
-            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[a objectAtIndex:0]];
-            [studentList addObject:[[Student alloc]initWithArray:a andPathname:s]];
-        }
+
+//        for(int j = 0; j<[output count]; j++){
+//            NSMutableArray *a = [output objectAtIndex:j];
+//            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[a objectAtIndex:0]];
+//            [studentList addObject:[[Student alloc]initWithArray:a andPathname:s]];
+//        }
     }
 }
 
