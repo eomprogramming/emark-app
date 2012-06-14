@@ -79,7 +79,7 @@
 
 - (id) initWithName:(NSString*)name andComExp:(NSString*)exp 
 	 andComIsObsCon:(NSString*)isObsCon andComLvl:(NSString*)lvl andComDsp:(NSString*)dsp 
-		andComToWho:(NSString*)toWho andComments:(NSString*)comments andLastEdit:(NSDate*)date andPathname:(NSString*)path
+		andComToWho:(NSString*)toWho andComments:(NSString*)comments andLastEdit:(NSString*)date andPathname:(NSString*)path
 {
 	self = [super init];
 	if(self)
@@ -95,7 +95,7 @@
 	
 		comComments = comments;
 	
-		lastEdit = date;
+		[self setDate:date];
 		
 		pathname = path;
 		
@@ -116,16 +116,16 @@
 		
 		comName = [data objectAtIndex:0];
 		
-		comExp = [data objectAtIndex:1];
+		comComments = [data objectAtIndex:1];
 		
-		comIsObsCon = [data objectAtIndex:2];
-		comLvl = [data objectAtIndex:3];
-		comDsp = [data objectAtIndex:4];
+		comLvl = [data objectAtIndex:2];
+		comIsObsCon = [data objectAtIndex:3];
+		comDsp = [data objectAtIndex:4];//
 		comToWho = [data objectAtIndex:5];
 		
 		comComments = [data objectAtIndex:6];
 		
-		lastEdit = [data objectAtIndex:7];
+        [self setDate:[data objectAtIndex:7]];
 		
 		if(comIsObsCon == OBSERVATIONS)
 			filename = @"o%i", [lastEdit timeIntervalSince1970];
@@ -149,7 +149,12 @@
 
 - (void) setComments:(NSString*)comments {comComments=comments;}
 
-- (void) setDate:(NSDate*)date {lastEdit=date;}
+- (void) setDate:(NSString*)date 
+{
+    double timeInt = [date doubleValue];
+    NSDate *temp = [NSDate dateWithTimeIntervalSince1970:timeInt];
+    lastEdit=temp;
+}
 
 - (NSString*) getName {return comName;}
 

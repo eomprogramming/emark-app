@@ -89,7 +89,7 @@ andComToWho:(NSString*)toWho andComments:(NSString*)comments andLastEdit:(NSDate
 - (void) setComments:(NSString*)comments;
 
 // Mutator: sets the Date
-- (void) setDate:(NSDate*)date;
+- (void) setDate:(NSString*)date;
 
 // Accessor: returns the name
 - (NSString*) getName;

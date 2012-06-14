@@ -20,7 +20,7 @@
 		@throw invalidData;
 	else
 	{
-			NSLog(@"%i", [identifiers count]);
+        NSLog(@"%i", [identifiers count]);
         NSMutableArray *temp = [[NSMutableArray alloc] init];
 		
 		[temp addObject:[NSString stringWithFormat:@"%i",[identifiers count]]];
@@ -32,9 +32,7 @@
             [[temp objectAtIndex:i+1]addObject:[names objectAtIndex:i]];
             NSLog(@"%@", temp);
 		}
-        NSLog(@"567765756hffhghgf");
     [temp writeToFile:[NSString stringWithFormat:@"%@/expectations",pathname] atomically:YES];
-        NSLog(@"23423");
     }
 }
 

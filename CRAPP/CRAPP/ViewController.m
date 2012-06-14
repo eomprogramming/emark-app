@@ -139,18 +139,6 @@
     
     //[connection addConversation:@"1" time:@"1" isLearning:@"1" explrnSkill:@"1" level:@"1" text:@"hi"];
     
-    //array of communications for a student
-    for(int j = 0; j < [output count]; j++){
-         {
-              NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
-              for(int i =0; i<[[output objectAtIndex:j] count];i++){
-                    Communication *com = [[Communication alloc]initWithArray:[[output  objectAtIndex:j] objectAtIndex:i] andPathname:@"KINGSTON"];
-                    [communicationsList addObject:com];
-                    [com saveData];
-               }
-         }
-    }
-    
     //make courses directory
     for(int i=0; i<[masterCourseList count];i++){
         Classroom *c = [masterCourseList objectAtIndex:i];
@@ -179,26 +167,44 @@
     
         [Expectation writeClassExpectations:[NSString stringWithFormat:@"/%@/%@",eMarkPATH,[[masterCourseList objectAtIndex:i] getId]] andIdentifiers:Ids andNames:names];
     }
+    
+    
+    
     //creating student directories
     for(int i = 0;i<[masterCourseList count];i++){
         
-        output = [connection selectStudentsByCourses:[masterCourseList objectAtIndex:i]];
+        output = [connection selectStudentsByCourses:[[masterCourseList objectAtIndex:i] getId]];
         [output removeObjectAtIndex:0];
-        output = [output objectAtIndex:0];
-        NSLog(@"%i",[output count]);
-        Classroom *c = [output objectAtIndex:i];
+        output = [output objectAtIndex:0];//array of student data
+        Classroom *c = [masterCourseList objectAtIndex:i];
         NSMutableArray *studentList = [[NSMutableArray alloc]init];
         
         for(int j = 0; j<[output count]; j++){
             NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[[output objectAtIndex:j]objectAtIndex:0]];
+            NSLog(s);
+            
             [[NSFileManager defaultManager] createDirectoryAtPath:s withIntermediateDirectories:YES attributes:nil error:nil];
         }
 
-//        for(int j = 0; j<[output count]; j++){
-//            NSMutableArray *a = [output objectAtIndex:j];
-//            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[a objectAtIndex:0]];
-//            [studentList addObject:[[Student alloc]initWithArray:a andPathname:s]];
-//        }
+        for(int j = 0; j<[output count]; j++){
+            NSMutableArray *a = [output objectAtIndex:j];
+            NSString *s = [NSString stringWithFormat:@"/%@/%@/%@",eMarkPATH,[c getId],[a objectAtIndex:0]];
+            [studentList addObject:[[Student alloc]initWithArray:a andPathname:s]];
+            [[studentList objectAtIndex:j] saveData];
+        }
+        
+        for(int j = 0; j <[output count]; j++){
+            NSMutableArray *clist = [connection selectAllCommunications:[[studentList objectAtIndex:j] getId]];
+           [clist removeObjectAtIndex:0];
+            clist = [clist objectAtIndex:0];
+            NSLog(@"%@",[clist objectAtIndex:0]);
+            NSMutableArray  *communicationsList = [[NSMutableArray alloc]init];
+                for(int i =0; i<[clist count];i++){
+                    Communication *com = [[Communication alloc]initWithArray:[clist objectAtIndex:i] andPathname:[NSString stringWithFormat:@"%@/",[[studentList objectAtIndex:j] getPathname]]] ;
+                    [communicationsList addObject:com];
+                    [com saveData];
+               }
+        }
     }
 }
 
