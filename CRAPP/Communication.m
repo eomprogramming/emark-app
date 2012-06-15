@@ -69,8 +69,8 @@
 		comToWho = [communicationData objectAtIndex:5];
 		
 		comComments = [communicationData objectAtIndex:6];
-		
-		lastEdit = [communicationData objectAtIndex:7];
+		fileName = [communicationData objectAtIndex:7];
+		[self setDate [communicationData objectAtIndex:7]];
 		
 		[communicationData dealloc];
 	}
@@ -94,14 +94,14 @@
 		comToWho = toWho;
 	
 		comComments = comments;
-	
+	        fileName = date;
 		[self setDate:date];
 		
 		pathname = path;
 		
 		if(comIsObsCon == OBSERVATIONS)
 			filename = @"o%i", [lastEdit timeIntervalSince1970];
-		else if(comIsObsCon == CONVERSATIONS)
+		else //if(comIsObsCon == CONVERSATIONS)
 			filename = @"c%i", [lastEdit timeIntervalSince1970];
 	}
 	return self;
@@ -124,7 +124,7 @@
 		comToWho = [data objectAtIndex:5];
 		
 		comComments = [data objectAtIndex:6];
-		
+		fileName = [data objectAtIndex:7];
         [self setDate:[data objectAtIndex:7]];
 		
 		if(comIsObsCon == OBSERVATIONS)
